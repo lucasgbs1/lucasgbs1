@@ -13,15 +13,19 @@ rápidos, bonitos no celular e feitos para trazer cliente pelo WhatsApp e pelo G
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
-### 🚀 Sites no ar
+### 🎮 Meu jogo no Roblox
 
-| Cliente | Segmento | Link |
-|---|---|---|
-| Globo Materiais | Materiais elétricos e hidráulicos | [globo-materiais.netlify.app](https://globo-materiais.netlify.app) |
-| Okicookie | Cookies artesanais | [okicookie.netlify.app](https://okicookie.netlify.app) |
-| Priscila Moda Country | Moda country | [priscila-moda-country.netlify.app](https://priscila-moda-country.netlify.app) |
-| Candeeiro | Churrascaria e pizzaria | [candeeiro-churrascaria.netlify.app](https://candeeiro-churrascaria.netlify.app) |
-| Eldorado Sabores | Cafeteria e confeitaria | [eldorado-sabores.netlify.app](https://eldorado-sabores.netlify.app) |
+<a href="https://www.roblox.com/games/126413557024028/BUILD-YOUR-OWN-BRAINROT-TYCOON">
+  <img src="assets/brainrot-tycoon.png" width="140" align="left" alt="Ícone do Build Your Own Brainrot Tycoon" />
+</a>
+
+**BUILD YOUR OWN BRAINROT TYCOON**
+
+Um tycoon onde você monta e evolui o seu próprio império de brainrots.
+
+[![Jogar no Roblox](https://img.shields.io/badge/Jogar_no_Roblox-000000?style=for-the-badge&logo=roblox&logoColor=white)](https://www.roblox.com/games/126413557024028/BUILD-YOUR-OWN-BRAINROT-TYCOON)
+
+<br clear="left" />
 
 ### ✅ O que todo site meu tem
 
