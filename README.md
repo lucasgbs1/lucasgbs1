@@ -1,7 +1,9 @@
 # Olá, eu sou o Lucas Gabriel 👋
 
-Desenvolvedor web em **Anápolis, GO**. Crio sites e landing pages para comércios locais:
-rápidos, bonitos no celular e feitos para trazer cliente pelo WhatsApp e pelo Google Maps.
+Desenvolvedor web e criador de jogos em **Anápolis, GO** · Founder da **Flickzx Studios** 🎮
+
+Crio sites e landing pages para comércios locais — rápidos, bonitos no celular e feitos para
+trazer cliente pelo WhatsApp e pelo Google Maps — e desenvolvo jogos no Roblox.
 
 ### 🛠️ Tecnologias
 
@@ -13,7 +15,7 @@ rápidos, bonitos no celular e feitos para trazer cliente pelo WhatsApp e pelo G
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
-### 🎮 Meu jogo no Roblox
+### 🎮 Jogos · Flickzx Studios
 
 <a href="https://www.roblox.com/games/126413557024028/BUILD-YOUR-OWN-BRAINROT-TYCOON">
   <img src="assets/brainrot-tycoon.png" width="140" align="left" alt="Ícone do Build Your Own Brainrot Tycoon" />
