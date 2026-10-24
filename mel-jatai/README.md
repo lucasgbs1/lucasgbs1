@@ -1,26 +1,32 @@
-# Mel Jataí, landing page
+# Jataí, site de mel e guia dos méis do Brasil
 
-Página de produto para mel de abelha Jataí (*Tetragonisca angustula*), em HTML, CSS e JavaScript puros. Não tem build nem dependência: abra `index.html` no navegador ou sirva a pasta com qualquer servidor estático (`npx serve mel-jatai`).
+Loja do mel de Jataí com um guia das abelhas que fazem mel no Brasil, região por região. Visual quente e tipográfico, com o pote que gira, perde a tampa e despeja o mel conforme a rolagem.
 
-## Estrutura
+Não tem build. Abra `index.html` no navegador ou sirva a pasta (`npx serve mel-jatai`). Precisa de internet para as fontes e para as bibliotecas de animação.
+
+## Arquivos
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `index.html` | Marcação semântica de todas as seções e o SVG do pote (fonte única, clonado pelo JS) |
-| `styles.css` | Tokens em `:root`, layout em Grid/Flexbox, breakpoints em 1068, 834 e 734 px |
-| `main.js` | Rolagem com sticky, revelação por IntersectionObserver, animação em canvas, loja, cookies |
+| `index.html` | Estrutura das seções e os SVGs do pote (vista lateral e de cima) |
+| `styles.css` | Tokens em `:root`, layout e breakpoints em 1024 e 760 px |
+| `main.js` | Catálogo, filtros, ficha, loja, cookies e toda a animação |
+| `data.js` | Espécies, floradas e indicações geográficas. Edite aqui para mudar o conteúdo |
+| `assets/flora.svg` | Padrão botânico do fundo |
 
-Seções: hero, história com sticky (420vh), bento de especificações, sensorial com controle de reprodução, loja com configuração e rodapé com notas, avisos regulatórios, seletor de região e preferências de cookies (LGPD).
+## Bibliotecas
 
-## O que trocar antes de publicar
+GSAP 3.12.5 com ScrollTrigger (cdnjs) e Lenis 1.1.13 (unpkg), as mesmas peças que a referência usa. Se não carregarem, ou se o visitante preferir menos movimento, a página mostra tudo estático e continua funcionando.
 
-- **Vídeo sensorial**: preencha `data-video="media/sensorial.mp4"` no bloco `.media`. Sem isso, roda a animação em canvas.
-- **Hero 3D**: o `<figure class="hero__stage">` aceita um `<video>` ou um canvas WebGL no lugar do SVG.
-- **Preços**: objeto `PRODUCTS` em `main.js`.
-- **Dados técnicos** (pH, umidade): os valores exibidos são faixas típicas da literatura. Substitua pelos números do laudo do lote.
-- **Rodapé**: CNPJ, endereço, telefone, número SIF/SIE/registro e e-mail do encarregado são espaços reservados. Os selos são caixas genéricas, não reproduções dos selos oficiais.
-- **Links legais**: Termos, Privacidade e demais páginas apontam para `#`.
+## Como a animação do pote funciona
 
-## Acessibilidade e desempenho
+O pote fica num palco fixo (`.stage`). Uma linha do tempo do GSAP, presa à rolagem da `.journey`, leva o pote de um estado para o seguinte sempre que uma cena chega ao topo da tela. Os estados ficam no array `states` em `main.js` (posição, escala, rotação e se mostra a vista de cima). A tampa sai na cena "Abra o pote" e o fio de mel é um traço SVG desenhado na última cena.
 
-Link de pular conteúdo, foco visível, rótulos ARIA na sacola e nos controles, `prefers-reduced-motion` respeitado (a animação começa pausada e as transições são desligadas). A rolagem usa um único `requestAnimationFrame` por quadro, e o canvas só anima quando está visível.
+Para chegar ao nível da referência, troque o SVG por uma sequência de imagens renderizadas em 3D (ou um vídeo) controlada pela mesma linha do tempo.
+
+## O que revisar antes de publicar
+
+- Distribuição das espécies por região, temperamento, produção e curiosidades em `data.js`. É conteúdo de referência geral e precisa da revisão de um meliponicultor ou biólogo.
+- Indicações geográficas: confira nome e tipo na base do INPI.
+- Resumo da CONAMA nº 496/2020 na seção "Pode criar?".
+- Preços, CNPJ, endereço e números SIE/SIM/MAPA, que são espaços reservados.

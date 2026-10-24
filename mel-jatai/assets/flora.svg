@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+  <!-- Padrão botânico: folhas, ramos e flores em silhueta. A cor é aplicada pelo CSS via opacidade. -->
+  <defs>
+    <g id="leaf"><path d="M0 0C18-26 52-30 78-14 52 4 22 10 0 0Z"/><path d="M0 0C26-8 50-12 76-14" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="1.2"/></g>
+    <g id="flower">
+      <g><ellipse cx="0" cy="-16" rx="6" ry="15"/><ellipse cx="0" cy="-16" rx="6" ry="15" transform="rotate(60)"/><ellipse cx="0" cy="-16" rx="6" ry="15" transform="rotate(120)"/><ellipse cx="0" cy="-16" rx="6" ry="15" transform="rotate(180)"/><ellipse cx="0" cy="-16" rx="6" ry="15" transform="rotate(240)"/><ellipse cx="0" cy="-16" rx="6" ry="15" transform="rotate(300)"/></g>
+      <circle r="6" fill="#000" fill-opacity=".35"/>
+    </g>
+    <g id="burst"><g stroke="#000" stroke-width="2" stroke-linecap="round">
+      <path d="M0 0L0-34M0 0L24-24M0 0L34 0M0 0L24 24M0 0L0 34M0 0L-24 24M0 0L-34 0M0 0L-24-24M0 0L12-32M0 0L32-12M0 0L32 12M0 0L12 32M0 0L-12 32M0 0L-32 12M0 0L-32-12M0 0L-12-32"/></g>
+      <circle r="5"/>
+    </g>
+  </defs>
+  <g fill="#000">
+    <!-- ramo 1 -->
+    <path d="M40 470C90 380 120 300 210 230" fill="none" stroke="#000" stroke-width="3"/>
+    <use href="#leaf" transform="translate(70 420) rotate(-70)"/>
+    <use href="#leaf" transform="translate(84 400) rotate(10) scale(.9)"/>
+    <use href="#leaf" transform="translate(112 340) rotate(-80) scale(.85)"/>
+    <use href="#leaf" transform="translate(126 322) rotate(-5) scale(.8)"/>
+    <use href="#leaf" transform="translate(166 270) rotate(-90) scale(.75)"/>
+    <use href="#leaf" transform="translate(180 256) rotate(-20) scale(.7)"/>
+    <!-- flores -->
+    <use href="#flower" transform="translate(300 90) scale(1.4)"/>
+    <use href="#flower" transform="translate(440 300) scale(1.1)"/>
+    <use href="#flower" transform="translate(110 120) scale(.9)"/>
+    <!-- estrelas de pólen -->
+    <use href="#burst" transform="translate(380 180) scale(1.3)"/>
+    <use href="#burst" transform="translate(250 430) scale(.9)"/>
+    <!-- ramo 2 -->
+    <path d="M520 40C460 80 420 140 400 220" fill="none" stroke="#000" stroke-width="2.5"/>
+    <use href="#leaf" transform="translate(488 62) rotate(150) scale(.8)"/>
+    <use href="#leaf" transform="translate(458 92) rotate(200) scale(.8)"/>
+    <use href="#leaf" transform="translate(432 136) rotate(150) scale(.7)"/>
+    <use href="#leaf" transform="translate(416 170) rotate(210) scale(.7)"/>
+    <!-- folha grande -->
+    <path d="M330 500C300 430 330 360 400 330 420 400 390 470 330 500Z"/>
+    <path d="M330 500C352 440 372 390 400 330" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="1.5"/>
+    <!-- folha solta -->
+    <path d="M20 40C60 10 110 20 130 60 90 80 40 76 20 40Z"/>
+  </g>
+</svg>
