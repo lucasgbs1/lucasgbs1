@@ -115,7 +115,7 @@
         <p class="sheet__sci">${esc(sp.cientifico)}</p>
       </div>
       <div class="sheet__media${FOTOS[sp.id] && MAPAS.has(sp.id) ? "" : " sheet__media--single"}">
-        ${FOTOS[sp.id] ? `<figure><img src="img/especies/${sp.id}.webp" alt="${esc(sp.nome)}"><figcaption>${credit(sp.id)}, via iNaturalist</figcaption></figure>` : ""}
+        ${FOTOS[sp.id] ? `<figure><img src="img/especies/${sp.id}.webp" alt="${esc(sp.nome)}"><figcaption>${credit(sp.id)}, via ${esc(FOTOS[sp.id].fonte || "iNaturalist")}${FOTOS[sp.id].nota ? `. ${esc(FOTOS[sp.id].nota)}` : ""}</figcaption></figure>` : ""}
         ${MAPAS.has(sp.id) ? `<figure class="sheet__map"><img src="img/mapas/${sp.id}.webp" alt="Mapa de ocorrência de ${esc(sp.nome)} no Brasil"><figcaption>Ocorrência por estado. Mapa: Luisgabriel007, CC0</figcaption></figure>` : ""}
       </div>
       <div class="sheet__grid">
@@ -155,7 +155,7 @@
   const nomes = Object.fromEntries([...DATA.especies.map((s) => [s.id, s.nome]), ...DATA.floradas.map((f) => [f.id, `Florada: ${f.nome}`])]);
   $("[data-credits]").innerHTML = [
     ...(DATA.cenas || []).map((c) => `<li>${esc(c.item)}: <a href="${c.url}" rel="noopener" target="_blank">${esc(c.autor)}</a>, ${esc(c.licenca)}, Wikimedia Commons</li>`),
-    ...Object.entries(FOTOS).map(([id, f]) => `<li>${esc(nomes[id] || id)}: <a href="${f.url}" rel="noopener" target="_blank">${esc(f.autor)}</a>, ${LIC[f.licenca] ? `<a href="${LIC[f.licenca]}" rel="noopener" target="_blank">${f.licenca}</a>` : esc(f.licenca)}, iNaturalist</li>`),
+    ...Object.entries(FOTOS).map(([id, f]) => `<li>${esc(nomes[id] || id)}: <a href="${f.url}" rel="noopener" target="_blank">${esc(f.autor)}</a>, ${LIC[f.licenca] ? `<a href="${LIC[f.licenca]}" rel="noopener" target="_blank">${f.licenca}</a>` : esc(f.licenca)}, ${esc(f.fonte || "iNaturalist")}</li>`),
   ].join("");
 
   /* ---------------------------------------------------------------------
