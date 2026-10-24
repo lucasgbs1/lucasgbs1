@@ -260,11 +260,8 @@ window.MEIS = {
 /* Créditos das fotos (iNaturalist). Gerado a partir das fontes; mantenha a atribuição ao trocar imagens. */
 window.MEIS.fotos = {
   "tiuba": {
-    "autor": "The Trustees of the Natural History Museum, London",
-    "licenca": "CC BY",
-    "url": "https://www.gbif.org/occurrence/2465411828",
-    "fonte": "Natural History Museum, London",
-    "nota": "Exemplar de museu, fotografado sobre fundo branco e recortado"
+    "propria": true,
+    "autor": "Imagem fornecida pelo responsável do site"
   },
   "jatai": {
     "autor": "Grete Pasch",
