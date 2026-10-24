@@ -1,6 +1,6 @@
-# Jataí, site de mel e guia dos méis do Brasil
+# Mel Nativo, loja e guia dos méis do Brasil
 
-Loja do mel de Jataí com um guia das abelhas que fazem mel no Brasil, região por região. Visual quente e tipográfico no estilo da eathungrytiger.com, só com fotografia real: o pote (foto recortada em tampa e corpo) gira e perde a tampa conforme a rolagem, e as cenas abrem fotos de Jataí, potes de cerume e mel escorrendo.
+Loja de méis de abelhas nativas sem ferrão (jataí, mandaçaia, uruçu-nordestina e jandaíra) com um guia das abelhas que fazem mel no Brasil, região por região. "Mel Nativo" é um nome provisório: troque no `index.html` (logo, título, rodapé) e no comentário do topo de `main.js` e `styles.css`. Visual quente e tipográfico no estilo da eathungrytiger.com, só com fotografia real: o pote (foto recortada em tampa e corpo) gira e perde a tampa conforme a rolagem, e as cenas abrem fotos de Jataí, potes de cerume e mel escorrendo.
 
 Não tem build. Abra `index.html` no navegador ou sirva a pasta (`npx serve mel-jatai`). Precisa de internet para as fontes e para as bibliotecas de animação.
 
@@ -35,4 +35,5 @@ O pote é genérico, sem rótulo. Para a marca, faça uma sessão de fotos do pr
 - Temperamento, produção e curiosidades em `data.js`. As regiões seguem os mapas de ocorrência do Commons, mas o texto ainda precisa da revisão de um meliponicultor ou biólogo.
 - Indicações geográficas: confira nome e tipo na base do INPI.
 - Resumo da CONAMA nº 496/2020 na seção "Pode criar?".
-- Preços, CNPJ, endereço e números SIE/SIM/MAPA, que são espaços reservados.
+- Preços (objeto `HONEYS` em `main.js`), CNPJ, endereço e números SIE/SIM/MAPA, que são espaços reservados.
+- Quais méis a loja realmente vende. Cada mel precisa vir de meliponicultor com registro sanitário.

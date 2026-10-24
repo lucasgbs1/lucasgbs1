@@ -1,4 +1,4 @@
-/* Jataí. Animações com GSAP + ScrollTrigger e rolagem suave com Lenis.
+/* Mel Nativo. Animações com GSAP + ScrollTrigger e rolagem suave com Lenis.
    Se as bibliotecas não carregarem, a página continua legível e funcional. */
 (() => {
   "use strict";
@@ -161,9 +161,16 @@
   /* ---------------------------------------------------------------------
      Loja
      ------------------------------------------------------------------- */
-  const PRODUCTS = {
-    100: { price: 89, label: "100 g", scale: .9, preorder: false },
-    250: { price: 189, label: "250 g", scale: 1.08, preorder: true },
+  // preços de exemplo por mel e tamanho
+  const HONEYS = {
+    jatai: { nome: "Jataí", precos: { 100: 89, 250: 189 }, filtro: "brightness(1.12) saturate(.8)" },
+    mandacaia: { nome: "Mandaçaia", precos: { 100: 69, 250: 149 }, filtro: "brightness(1)" },
+    "urucu-nordestina": { nome: "Uruçu-nordestina", precos: { 100: 59, 250: 129 }, filtro: "brightness(.94) saturate(1.1)" },
+    jandaira: { nome: "Jandaíra", precos: { 100: 79, 250: 169 }, filtro: "brightness(1.18) saturate(.7)" },
+  };
+  const SIZES = {
+    100: { label: "100 g", scale: .9, preorder: false },
+    250: { label: "250 g", scale: 1.08, preorder: true },
   };
   const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
   const shop = $("[data-shop]");
@@ -172,7 +179,6 @@
   let bag = parseInt(storage.get("mj-bag") || "0", 10) || 0;
 
 
-  $$("[data-price-for]").forEach((el) => { el.textContent = brl.format(PRODUCTS[el.dataset.priceFor].price); });
 
   function renderBag() {
     const badge = $("[data-bag-count]");
@@ -183,10 +189,11 @@
 
   function renderShop() {
     const fd = new FormData(shop);
-    const p = PRODUCTS[fd.get("size")];
-    const biome = fd.get("biome");
-    const total = p.price * qty;
-    $("[data-sum-name]").textContent = `Jataí ${p.label}, ${biome}${qty > 1 ? `, ${qty} potes` : ""}`;
+    const p = SIZES[fd.get("size")];
+    const honey = HONEYS[fd.get("honey")];
+    $$("[data-price-for]").forEach((el) => { el.textContent = brl.format(honey.precos[el.dataset.priceFor]); });
+    const total = honey.precos[fd.get("size")] * qty;
+    $("[data-sum-name]").textContent = `Mel de ${honey.nome}, ${p.label}${qty > 1 ? `, ${qty} potes` : ""}`;
     $("[data-sum-total]").textContent = brl.format(total);
     $("[data-sum-sub]").textContent = `ou 3x de ${brl.format(Math.round(total / 3 * 100) / 100)} sem juros`;
     $("[data-shop-cta]").textContent = p.preorder ? "Reservar" : "Comprar";
@@ -194,7 +201,7 @@
     $("[data-qty-value]").textContent = String(qty);
     $$("[data-qty]").forEach((b) => { b.disabled = (+b.dataset.qty < 0 && qty <= 1) || (+b.dataset.qty > 0 && qty >= 6); });
     shopJar.style.setProperty("--s", p.scale);
-    shopJar.classList.toggle("is-light", biome === "Mata Atlântica");
+    shopJar.style.setProperty("--honey", honey.filtro);
   }
 
   shop.addEventListener("change", renderShop);
@@ -204,7 +211,7 @@
   }));
   shop.addEventListener("submit", (e) => {
     e.preventDefault();
-    const p = PRODUCTS[new FormData(shop).get("size")];
+    const p = SIZES[new FormData(shop).get("size")];
     bag += qty;
     storage.set("mj-bag", String(bag));
     renderBag();

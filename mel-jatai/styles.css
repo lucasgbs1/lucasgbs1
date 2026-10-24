@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Jataí. Visual quente: fundo de mel queimado, textura de papel,
+   Mel Nativo. Visual quente: fundo de mel queimado, textura de papel,
    tipografia geométrica gigante e pílulas amarelas.
    ========================================================================== */
 
@@ -312,14 +312,13 @@ em { font-style: italic; }
 .shop__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
 .shop__visual { position: relative; aspect-ratio: 1; border-radius: 40px; background: var(--bg-deep); display: grid; place-items: center; overflow: hidden; }
 .shop__visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 50% at 50% 45%, rgba(248, 177, 51, .22), transparent 70%); }
-.shop__jar { position: relative; width: 46%; height: auto; transition: transform .8s var(--ease), filter .6s; transform: scale(var(--s, 1)) rotate(var(--r, -6deg)); filter: drop-shadow(0 30px 34px rgba(0, 0, 0, .5)); }
-.shop__jar.is-light { filter: drop-shadow(0 30px 34px rgba(0, 0, 0, .5)) brightness(1.12) saturate(.8) hue-rotate(8deg); }
+.shop__jar { position: relative; width: 46%; height: auto; transition: transform .8s var(--ease), filter .6s; transform: scale(var(--s, 1)) rotate(var(--r, -6deg)); filter: drop-shadow(0 30px 34px rgba(0, 0, 0, .5)) var(--honey, brightness(1)); }
 .shop__tag { position: absolute; top: 22px; left: 22px; padding: 8px 14px; border-radius: 99px; background: var(--yellow); color: var(--ink); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
 .shop__form { display: grid; gap: 26px; }
 .opts { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
 .opts legend { margin-bottom: 12px; padding: 0; }
-.opts--row { grid-template-columns: 1fr 1fr; }
-.opts--row legend { grid-column: 1 / -1; }
+.opts--grid { grid-template-columns: 1fr 1fr; }
+.opts--grid legend { grid-column: 1 / -1; }
 .opt { position: relative; cursor: pointer; }
 .opt input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
 .opt > span {
@@ -378,7 +377,7 @@ em { font-style: italic; }
 .seal { width: 60px; height: 60px; border-radius: 50%; border: 2px solid rgba(247, 230, 196, .5); display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; color: var(--cream); }
 .seal small { font-size: 8px; font-weight: 500; opacity: .75; }
 .seal--wide { width: auto; padding: 0 16px; border-radius: 14px; }
-.footer__word { font-size: clamp(90px, 27vw, 480px); line-height: .78; text-align: center; margin: 60px -0.04em 30px; letter-spacing: -.03em; }
+.footer__word { font-size: clamp(36px, 10.8vw, 156px); white-space: nowrap; line-height: .78; text-align: center; margin: 60px -0.04em 30px; letter-spacing: -.03em; }
 .footer__legal { display: flex; justify-content: space-between; gap: 14px 30px; flex-wrap: wrap; font-size: 12px; color: rgba(247, 230, 196, .7); }
 .footer__legal ul { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .footer__legal a:hover { color: var(--yellow); }
@@ -440,7 +439,8 @@ em { font-style: italic; }
   .filters { flex-wrap: nowrap; overflow-x: auto; margin: 0 calc(var(--pad) * -1); padding: 0 var(--pad) 4px; scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
   .sheet__grid { grid-template-columns: 1fr; }
-  .opts--row { grid-template-columns: 1fr; }
+  .opts--grid { grid-template-columns: 1fr 1fr; }
+  .opt--sm > span { padding: 14px 16px; }
   .news__form { flex-direction: column; }
   .footer__word { margin-top: 40px; }
   .cookie { width: calc(100% - var(--pad) * 2); bottom: calc(var(--pad) + 64px); flex-direction: column; align-items: stretch; }
