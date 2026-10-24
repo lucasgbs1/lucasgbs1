@@ -10,9 +10,12 @@
   <meta property="og:description" content="As abelhas que fazem mel no Brasil, região por região.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="img/cena-entrada-1280.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/pote-corpo.webp" type="image/webp">
+  <link rel="preload" as="image" href="img/pote-tampa.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,12 +29,7 @@
         <li><a class="chip" href="#floradas">Floradas</a></li>
         <li><a class="chip" href="#lei">A lei</a></li>
       </ul>
-      <a class="nav__logo" href="#topo" aria-label="Jataí, início">
-        <svg viewBox="0 0 120 64" width="96" height="51" aria-hidden="true">
-          <use href="#bee" x="30" y="0" width="60" height="34"/>
-          <text x="60" y="58" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="19" fill="currentColor" letter-spacing="1">JATAÍ</text>
-        </svg>
-      </a>
+      <a class="nav__logo" href="#topo" aria-label="Jataí, início">Jataí</a>
       <ul class="nav__group nav__group--end">
         <li class="nav__hide-sm"><a class="chip" href="#rodape">Contato</a></li>
         <li><a class="chip chip--icon" href="#loja">Comprar
@@ -52,83 +50,13 @@
     </a>
   </div>
 
-  <!-- Palco fixo do pote: anima conforme a rolagem pela jornada -->
+  <!-- Palco fixo do pote (foto real recortada em tampa e corpo) -->
   <div class="stage" data-stage aria-hidden="true">
     <div class="stage__jar" data-jar>
       <div class="stage__rot" data-jar-rot>
-        <svg class="jar jar--side" data-jar-side viewBox="0 0 300 400">
-          <defs>
-            <linearGradient id="g-honey" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" stop-color="#ffd25a"/>
-              <stop offset=".45" stop-color="#f29a1f"/>
-              <stop offset="1" stop-color="#a24c08"/>
-            </linearGradient>
-            <linearGradient id="g-round" x1="0" x2="1">
-              <stop offset="0" stop-color="#3b1503" stop-opacity=".55"/>
-              <stop offset=".22" stop-color="#3b1503" stop-opacity="0"/>
-              <stop offset=".72" stop-color="#fff3c4" stop-opacity=".12"/>
-              <stop offset="1" stop-color="#3b1503" stop-opacity=".6"/>
-            </linearGradient>
-            <linearGradient id="g-lid" x1="0" x2="1">
-              <stop offset="0" stop-color="#0d0502"/>
-              <stop offset=".35" stop-color="#3a1a0b"/>
-              <stop offset=".6" stop-color="#1b0b04"/>
-              <stop offset="1" stop-color="#050201"/>
-            </linearGradient>
-          </defs>
-          <!-- corpo de vidro com mel -->
-          <path d="M46 126c0-16 10-24 26-24h156c16 0 26 8 26 24v226c0 22-14 34-36 34H82c-22 0-36-12-36-34Z" fill="url(#g-honey)"/>
-          <path d="M46 126c0-16 10-24 26-24h156c16 0 26 8 26 24v226c0 22-14 34-36 34H82c-22 0-36-12-36-34Z" fill="url(#g-round)"/>
-          <rect x="62" y="120" width="9" height="240" rx="4.5" fill="#fff6d8" opacity=".38"/>
-          <rect x="230" y="130" width="5" height="200" rx="2.5" fill="#fff6d8" opacity=".2"/>
-          <!-- rótulo -->
-          <g>
-            <rect x="46" y="196" width="208" height="150" fill="#3a1406"/>
-            <rect x="46" y="196" width="208" height="150" fill="url(#g-round)"/>
-            <rect x="58" y="208" width="184" height="126" rx="10" fill="none" stroke="#f8b133" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
-            <use href="#bee" x="115" y="218" width="70" height="40" style="color:#f8b133"/>
-            <text x="150" y="294" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="30" fill="#f8b133">JATAÍ</text>
-            <text x="150" y="313" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="9" letter-spacing="1.6" fill="#f8b133">MEL DE ABELHA NATIVA</text>
-            <text x="150" y="326" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="7.5" letter-spacing="1.2" fill="#f8b133" opacity=".8">250 G · SEM FERRÃO</text>
-          </g>
-          <!-- anel e tampa -->
-          <rect x="54" y="90" width="192" height="16" rx="4" fill="#f6e3b4"/>
-          <g data-lid>
-            <rect x="40" y="22" width="220" height="74" rx="14" fill="url(#g-lid)"/>
-            <path d="M56 30v58M70 30v58M84 30v58M98 30v58M112 30v58M126 30v58M140 30v58M154 30v58M168 30v58M182 30v58M196 30v58M210 30v58M224 30v58M238 30v58" stroke="#fff" stroke-opacity=".08" stroke-width="2"/>
-            <rect x="46" y="24" width="208" height="6" rx="3" fill="#fff" opacity=".14"/>
-          </g>
-        </svg>
-
-        <svg class="jar jar--top" data-jar-top viewBox="0 0 300 300">
-          <defs>
-            <radialGradient id="g-top" cx=".42" cy=".38" r=".7">
-              <stop offset="0" stop-color="#3a1a0b"/>
-              <stop offset="1" stop-color="#050201"/>
-            </radialGradient>
-            <path id="ring-path" d="M150 150m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/>
-          </defs>
-          <circle cx="150" cy="150" r="142" fill="#e2901c"/>
-          <circle cx="150" cy="150" r="132" fill="url(#g-top)"/>
-          <circle cx="150" cy="150" r="118" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="3"/>
-          <circle cx="150" cy="150" r="76" fill="#f8b133"/>
-          <circle cx="150" cy="150" r="71" fill="none" stroke="#3a1406" stroke-width="1.5" stroke-dasharray="2 5"/>
-          <text font-family="Inter, sans-serif" font-weight="700" font-size="10" letter-spacing="2.4" fill="#3a1406"><textPath href="#ring-path">MEL NATIVO · JATAÍ · OURO LÍQUIDO ·</textPath></text>
-          <use href="#bee" x="120" y="132" width="60" height="34" style="color:#3a1406"/>
-        </svg>
+        <img class="jar__layer" src="img/pote-corpo.webp" width="881" height="1164" alt="" decoding="async">
+        <img class="jar__layer jar__lid" data-lid src="img/pote-tampa.webp" width="881" height="1164" alt="" decoding="async">
       </div>
-      <!-- fio de mel do final (não gira com o pote) -->
-      <svg class="pour" data-pour viewBox="0 0 60 1000" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="g-pour" x1="0" x2="1">
-            <stop offset="0" stop-color="#b85a08"/>
-            <stop offset=".45" stop-color="#ffc840"/>
-            <stop offset=".6" stop-color="#ffe08a"/>
-            <stop offset="1" stop-color="#c46a0c"/>
-          </linearGradient>
-        </defs>
-        <path data-pour-path d="M30 0C24 140 36 280 30 440S25 760 30 1000" fill="none" stroke="url(#g-pour)" stroke-width="26" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
-      </svg>
     </div>
   </div>
 
@@ -150,14 +78,22 @@
       <section class="scene scene--angle" aria-labelledby="angle-title">
         <h2 class="display" id="angle-title" data-split>Um novo ângulo do doce</h2>
         <p class="small-caps scene__note" data-reveal>Mais ácido, mais fluido e mais raro que o mel de supermercado. Uma colônia de Jataí entrega cerca de um litro por ano.<sup>1</sup></p>
+        <figure class="shot shot--right" data-shot>
+          <img src="img/cena-entrada-1280.webp" srcset="img/cena-entrada-1280.webp 1280w, img/cena-entrada-2048.webp 2048w" sizes="(max-width: 760px) 92vw, 34vw" width="1280" height="1600" alt="Abelhas Jataí no tubo de cera da entrada do ninho" loading="lazy" decoding="async">
+          <figcaption>Guardas na entrada de um ninho de Jataí</figcaption>
+        </figure>
       </section>
 
       <section class="scene scene--open" aria-labelledby="open-title">
-        <h2 class="display display--pattern" id="open-title" data-split>Abra o pote</h2>
+        <h2 class="display display--photo" id="open-title" data-split>Abra o pote</h2>
         <p class="small-caps scene__note scene__note--center" data-reveal>Tire a tampa e vem primeiro o perfume: flor do mato, resina, um fundo de limão. É o cerume, mistura de cera e resina vegetal onde a Jataí guarda o mel.</p>
       </section>
 
       <section class="scene scene--brasil" aria-label="Brasil">
+        <figure class="shot shot--left" data-shot>
+          <img src="img/cena-tubo.webp" width="1152" height="1440" alt="Tubo de cera amarela na entrada de um ninho de Jataí, com abelhas na borda" loading="lazy" decoding="async">
+          <figcaption>A entrada de cera, feita pela própria colônia</figcaption>
+        </figure>
         <div class="scene__aside">
           <p class="small-caps" data-reveal>O Brasil tem centenas de espécies de abelhas sem ferrão. Cada bioma tem as suas, e cada uma faz um mel diferente.</p>
           <a class="btn" href="#meis" data-reveal>Ver os méis</a>
@@ -175,9 +111,16 @@
           </ol>
           <p class="stamp" data-reveal>Sem calor.<br>Sem mistura.<br>Sem atalho.</p>
         </div>
+        <figure class="shot shot--right shot--tall" data-shot>
+          <img src="img/cena-potes-1280.webp" srcset="img/cena-potes-1280.webp 1280w, img/cena-potes-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 30vw" width="1280" height="1707" alt="Potes de cerume com mel dentro de uma caixa de mandaçaia" loading="lazy" decoding="async">
+          <figcaption>Potes, não favos: é assim que as abelhas nativas guardam o mel</figcaption>
+        </figure>
       </section>
 
       <section class="scene scene--pour" aria-labelledby="pour-title">
+        <div class="pour-photo" data-pour-photo>
+          <img src="img/cena-gota-1920.webp" srcset="img/cena-gota-1920.webp 1920w, img/cena-gota-3840.webp 3840w" sizes="100vw" width="1920" height="1280" alt="Mel escuro escorrendo devagar de uma colher de madeira" loading="lazy" decoding="async">
+        </div>
         <h2 class="display" id="pour-title" data-split>Escorre devagar</h2>
         <p class="small-caps scene__note" data-reveal>Fluido como xarope fino. Por isso o mel nativo mora na geladeira, entre 2 e 8 °C.</p>
       </section>
@@ -210,6 +153,12 @@
     <dialog class="sheet" data-sheet aria-labelledby="sheet-title">
       <div class="sheet__inner" data-sheet-body></div>
     </dialog>
+
+    <!-- FAIXA DE FOTO -->
+    <section class="band" aria-label="Ninho de abelhas sem ferrão">
+      <img class="band__img" data-band src="img/cena-ninho.webp" width="1920" height="1354" alt="Abelhas sem ferrão na entrada de cera do ninho, presa ao tronco" loading="lazy" decoding="async">
+      <p class="band__text" data-split>Quatro milímetros de abelha</p>
+    </section>
 
     <!-- FLORADAS -->
     <section class="floradas" id="floradas" aria-labelledby="floradas-title">
@@ -259,7 +208,7 @@
     <section class="shop" id="loja" aria-labelledby="shop-title">
       <div class="wrap shop__grid">
         <div class="shop__visual" data-reveal>
-          <div class="shop__jar" data-shop-jar></div>
+          <img class="shop__jar" data-shop-jar src="img/pote.webp" width="881" height="1164" alt="Pote de vidro com mel e tampa dourada" loading="lazy" decoding="async">
           <span class="shop__tag" data-shop-tag>Pronta entrega</span>
         </div>
         <form class="shop__form" data-shop novalidate>
@@ -327,7 +276,7 @@
             <li><a href="#meis">Os méis do Brasil</a></li>
             <li><a href="#floradas">Floradas</a></li>
             <li><a href="#lei">A lei</a></li>
-            <li><a href="#">Laudos por lote</a></li>
+            <li><a href="#creditos">Créditos das fotos</a></li>
           </ul>
           <ul>
             <li class="footer__h">Ajuda</li>
@@ -354,7 +303,7 @@
           <li>Produção média estimada por colônia de <em>Tetragonisca angustula</em>. Varia com florada, clima, região e manejo.</li>
           <li>Faixas típicas descritas na literatura para mel de Jataí: pH entre 3,5 e 4,5 e umidade entre 24% e 30%. Os valores de cada lote estão no laudo que acompanha o produto.</li>
           <li>Lista de exemplos, não exaustiva. Consulte a base de Indicações Geográficas do INPI.</li>
-          <li>Resumo informativo, sem valor jurídico. Normas estaduais podem trazer exigências adicionais. A distribuição das espécies por região é indicativa.</li>
+          <li>Resumo informativo, sem valor jurídico. Normas estaduais podem trazer exigências adicionais. A distribuição por região segue mapas de ocorrência publicados no Wikimedia Commons e é indicativa.</li>
           <li>Preços em reais com impostos inclusos. Parcelamento sem juros sujeito à aprovação do cartão. Pré-venda enviada após colheita e análise do lote.</li>
         </ol>
         <div class="seals" aria-label="Selos de inspeção, espaço reservado">
@@ -365,6 +314,12 @@
         <p><strong>Mel de abelhas sem ferrão.</strong> Produto da meliponicultura nativa, de colônias de <em>Tetragonisca angustula</em> criadas conforme a Resolução CONAMA nº 496/2020. Não pasteurizado. Pode apresentar fermentação natural leve, cristalização e variação de cor entre lotes.</p>
         <p><strong>Conservar entre 2 °C e 8 °C.</strong> Não oferecer a crianças menores de 1 ano. É alimento e não tem finalidade terapêutica.</p>
       </section>
+
+      <details class="credits" id="creditos">
+        <summary>Créditos das fotos</summary>
+        <p>Todas as fotos são reais e usadas sob licenças livres. Imagens CC BY-SA foram recortadas e redimensionadas e seguem sob a mesma licença.</p>
+        <ul data-credits></ul>
+      </details>
 
       <p class="footer__word" aria-hidden="true">Jataí</p>
 
@@ -401,17 +356,8 @@
 
   <div class="toast" role="status" aria-live="polite" data-toast></div>
 
-  <!-- Símbolos reutilizados -->
+  <!-- Ícones de interface -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="bee" viewBox="0 0 70 40">
-      <ellipse cx="30" cy="11" rx="11" ry="7" transform="rotate(-25 30 11)" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <ellipse cx="44" cy="11" rx="11" ry="7" transform="rotate(25 44 11)" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <ellipse cx="40" cy="25" rx="16" ry="10" fill="currentColor"/>
-      <path d="M35 16v18M43 15.5v19" stroke="#000" stroke-opacity=".5" stroke-width="3"/>
-      <circle cx="19" cy="25" r="7" fill="currentColor"/>
-      <path d="M15 19c-2-5-5-7-9-7M18 18c0-5-1-8-4-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M56 25l7 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-    </symbol>
     <symbol id="i-basket" viewBox="0 0 24 24"><path d="M3 9h18l-2 11H5L3 9Zm4 0 3-5m7 5-3-5M8 13v4m4-4v4m4-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
     <symbol id="i-jar" viewBox="0 0 24 24"><path d="M8 2h8v4H8z" fill="currentColor"/><path d="M7 7h10c1 0 2 1 2 2v10c0 2-1 3-3 3H8c-2 0-3-1-3-3V9c0-1 1-2 2-2Z" fill="currentColor"/></symbol>
   </svg>
